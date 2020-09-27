@@ -1,30 +1,55 @@
-
 <html>
- 
+
 <h1>Strawgoh</h1>
 <p>You have been accepted into strawgoh, (enter a name)
-  <input type="text" id="txtName"/><input type="button" id="btnSetName" onclick="setName()" value="Set Name"/>
+  <input type="text" id="txtName" /><input type="button" id="btnSetName" onclick="setName()" value="Set Name" />
 </p>
-<p style="display: none;" id="p2" ></P>
+<div style="display: none;" id="p2">
+
+
+
+</div>
+
+<p style="display:none;" id="p3">When you get to class you get into a wizard duel for a grade your opponent is Malfette
+  the frist spell you cast will be cast by solving 164•<input type="text" id="answer1" />=328
+  <input id="answerbutton1" type="button" onclick="answer1()" value="Answer" />
+<p id="response1"></p>
+</p>
 
 
 
 <script>
   var name = "";
-  var p2=`school starts in october 16th there will be a train for you at 3 9/4." So when the day rolls around 
+  var p2 = `school starts in october 16th there will be a train for you at 3 9/4." So when the day rolls around 
   and you get on the train you try to talk to the people there with you they're nice to you they are going 
 The two people you meet one is named Herman and Rhonda you guys have the same classes they told you 
 they'll see you class.`
-function setName(){
+  function setName() {
     name = document.getElementById("txtName").value;
     document.getElementById("p2").style = "display:inline"
     document.getElementById("p2").innerHTML = "Hello, " + name + " " + p2;
+    document.getElementById("p3").style = "display:inline"
 
-}
-function rollDice() {
-  var result = 1 + Math.floor(Math.random()*20)
-  alert(result);
-}
+  }
+  function rollDice() {
+    var result = 1 + Math.floor(Math.random() * 20)
+    alert(result);
+  }
+  function answer1() {
+   
+    var answer = document.getElementById("answer1").value;
+    if (answer == "2") {
+
+      document.getElementById("response1").innerHTML = ("correct you cast fire ball doing 25 damage")
+
+    } else {
+
+      document.getElementById("response1").innerHTML = ("incorrect you failed to cast fire ball");
+    }
+
+    const button = document.querySelector("#answerbutton1")
+    button.disabled = true
+  }
 </script>
 
 </html>
