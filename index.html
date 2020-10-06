@@ -1,4 +1,4 @@
-<html>
+<html style="background-image: url(https://images.ctfassets.net/usf1vwtuqyxm/7EsDSrJhr0pNwUNK8lrUwY/f8d7e5101de6dda8f46c0f94673087a9/HP-Hogwarts-39PHOTOBU17074_PHUP_HP.jpg?fm=jpg);">
 
 <h1>Strawgoh</h1>
 <p>You have been accepted into strawgoh, (enter a name)
@@ -10,20 +10,42 @@
 
 </div>
 
-<p style="display:none;" id="p3">When you get to class you get into a wizard duel for a grade your opponent is Malfette
-  the frist spell you cast will be cast by solving 164•<input type="text" id="answer1" />=328
+<p style="display:none;" id="p3"> The first spell you learn is fireball answer the question correctly you cast the spell mess up the 
+  question you don't cast the spell first question 164•<input type="text" id="answer1" />=328
   <input id="answerbutton1" type="button" onclick="answer1()" value="Answer" />
 <p id="response1"></p>
 </p>
 
+<p style="display:none;" id="p4"> Now cast fireball again 50•<input type="text" id="answer2" />=150
+  <input id="answerbutton2" type="button" onclick="answer2()" value="Answer" />
+<p id="response2"></p>
+</p>
 
+<p style="display:none;" id="p5"> Now cast fireball again 32•<input type="text" id="answer3" />=128
+  <input id="answerbutton3" type="button" onclick="answer3()" value="Answer" />
+<p id="response3"></p>
+</p>
+
+<p style="display:none;" id="p6"> Now cast fireball again 28+3(<input type="text" id="answer4" />)=58
+  <input id="answerbutton4" type="button" onclick="answer4()" value="Answer" />
+<p id="response4"></p>
+</p>
+
+<p style="display:none;" id="p7"> 
+ 
+<p id="numansyay"></p>
+</p>
 
 <script>
   var name = "";
-  var p2 = `school starts in october 16th there will be a train for you at 3 9/4." So when the day rolls around 
-  and you get on the train you try to talk to the people there with you they're nice to you they are going 
-The two people you meet one is named Herman and Rhonda you guys have the same classes they told you 
-they'll see you class.`
+  var numans = 0;
+  var p2 =  
+  `School starts on October 16th. There will be a train for you at the 9th station. So when the day arrives, along with the train 
+  and you get on the train. You try to make small talk to the people on the train with you. They're nice to you. 
+  The two people you meet are named Herman and Rhonda. You guys have the same classes. They tell you they'll see you in class
+but first you settle into the school. While settling in you have time for your first wizard duel.`
+ 
+ 
   function setName() {
     name = document.getElementById("txtName").value;
     document.getElementById("p2").style = "display:inline"
@@ -40,16 +62,83 @@ they'll see you class.`
     var answer = document.getElementById("answer1").value;
     if (answer == "2") {
 
-      document.getElementById("response1").innerHTML = ("correct you cast fire ball doing 25 damage")
-
+      document.getElementById("response1").innerHTML = ("correct you cast fire ball doing 25 damage ");
+      numans+=1;
     } else {
 
-      document.getElementById("response1").innerHTML = ("incorrect you failed to cast fire ball");
+      document.getElementById("response1").innerHTML = "incorrect you failed to cast fire ball";
+
     }
 
     const button = document.querySelector("#answerbutton1")
     button.disabled = true
-  }
-</script>
+    document.getElementById("p4").style = "display:inline"
+    }
+    
+    function answer2()
+    {
+
+    var answer = document.getElementById("answer2").value;
+    if (answer == "3") {
+
+      document.getElementById("response2").innerHTML = ("correct you cast fire ball doing 25 damage ");
+      numans+=1;
+    } else {
+
+      document.getElementById("response2").innerHTML = "incorrect you failed to cast fire ball";
+
+    }
+
+    const button = document.querySelector("#answerbutton2")
+    button.disabled = true
+    
+    document.getElementById("p5").style = "display:inline"
+    
+    }
+
+    function answer3() {
+    
+    var answer = document.getElementById("answer3").value;
+    if (answer == "4") {
+
+      document.getElementById("response3").innerHTML = ("correct you cast fire ball doing 25 damage ");
+      numans+=1;
+    } else {
+
+      document.getElementById("response3").innerHTML = "incorrect you failed to cast fire ball";
+
+    }
+
+    const button = document.querySelector("#answerbutton3")
+    button.disabled = true 
+
+    document.getElementById("p6").style = "display:inline"   
+    } 
+    function answer4() {
+    
+    var answer = document.getElementById("answer4").value;
+    if (answer == "10") {
+
+      document.getElementById("response4").innerHTML = ("correct you cast fire ball doing 25 damage ");
+      numans+=1;
+    } else {
+
+      document.getElementById("response4").innerHTML = "incorrect you failed to cast fire ball";
+
+    }
+
+    const button = document.querySelector("#answerbutton4")
+    button.disabled = true    
+    var finalresponse="";
+    if (numans==4){
+      finalresponse="Congratulations you win you stuck down your oppnent with your final fireball you tell your oppnent no hard feelings.";
+    } else {
+      finalresponse="Sorry you lose your oppnent sturck you down with a fireball they say no hard feeling though.";
+    }
+    document.getElementById("numansyay").innerHTML = finalresponse;
+    document.getElementById("p6").style = "display:inline" 
+    
+    } 
+      </script>
 
 </html>
